@@ -3,12 +3,23 @@ const app = express()
 const { connection } = require("./Config/db")
 const { userroute } = require("./Routes/userroute")
 const { taskroute } = require("./Routes/taskroute")
-const {logRequestSync} = require('./Middleware/logger');
+const { logRequestSync } = require('./Middleware/logger');
+const rateLimit = require('express-rate-limit');
 require("dotenv").config()
 app.use(express.json())
 
 
-//app.use(logRequestSync)
+
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 50, // Maximum 50 requests per minute
+  message: 'Too many requests from this IP, please try again later.',
+});
+
+app.use(limiter);
+
+
+
 app.get("/", (req, res) => {
     res.send("home page")
 })
