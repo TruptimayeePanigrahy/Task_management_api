@@ -13,6 +13,7 @@ This is a RESTful API for managing tasks. Users can create, retrieve, update, an
 - Authentication
 - Error Handling
 - Logging
+- Rate Limiting
 
 ## Getting Started
 Prerequisites
@@ -63,4 +64,6 @@ To use authentication, you must register and log in to manage tasks. Protected e
 Appropriate HTTP status codes and error messages will be returned in case of errors.
 ## Logging 
 API requests and responses can be logged in a log.txt file.
+## Rate Limiting 
+Rate limiting  applied to restrict the number of requests from clients within a specified time period.
 <h1 align="center">✨Thank You✨</h1>
