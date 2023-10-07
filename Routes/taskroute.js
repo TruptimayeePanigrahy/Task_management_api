@@ -12,7 +12,7 @@ taskroute.get("/gettask",async (req, res) => {
     }
 })
 
-taskroute.post("/addtask",async (req, res) => {
+taskroute.post("/addtask",auth,async (req, res) => {
     try {
         const { title, description, status } = req.body;
         const data = new taskmodel({ title, description, status })
@@ -24,7 +24,7 @@ taskroute.post("/addtask",async (req, res) => {
     }
 })
 
-taskroute.put("/updatetask/:id",async (req, res) => {
+taskroute.put("/updatetask/:id",auth,async (req, res) => {
     try {
         const { id } = req.params
         const data = req.body
@@ -35,7 +35,7 @@ taskroute.put("/updatetask/:id",async (req, res) => {
     }
 })
 
-taskroute.delete("/deletetask/:id",async (req, res) => {
+taskroute.delete("/deletetask/:id",auth,async (req, res) => {
     try {
         const { id } = req.params
         await taskmodel.findByIdAndDelete({ _id: id })

@@ -4,6 +4,7 @@ require("dotenv").config()
 
 const auth = (req, res, next) => {
     const token = req.headers.authorization
+    console.log(token)
     if (!token) {
         return res.status(400).send({"msg":"please login"})
     }

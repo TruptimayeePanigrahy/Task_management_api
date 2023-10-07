@@ -6,3 +6,16 @@
 2023-10-07T07:16:01.529Z -url POST /user/register - Status: 200, Content Length: undefined bytes
 2023-10-07T07:22:45.723Z -url POST /user/register - Status: 200, Content Length: 0 bytes
 2023-10-07T07:24:06.146Z -url POST /user/login - Status: 200, Content Length: 0 bytes
+2023-10-07T07:29:20.610Z -url POST /task/addtask - Status: 200, Content Length: 0 bytes
+2023-10-07T07:29:48.648Z -url GET /task/gettask - Status: 200, Content Length: 0 bytes
+2023-10-07T07:30:49.382Z -url PUT /task/updatetask/652108d0b9ed97932cd2bd68 - Status: 200, Content Length: 0 bytes
+2023-10-07T07:31:06.324Z -url GET /task/gettask - Status: 200, Content Length: 0 bytes
+2023-10-07T07:31:29.239Z -url GET /task/deletetask/652108d0b9ed97932cd2bd68 - Status: 200, Content Length: 0 bytes
+2023-10-07T07:31:36.000Z -url DELETE /task/deletetask/652108d0b9ed97932cd2bd68 - Status: 200, Content Length: 0 bytes
+2023-10-07T07:35:36.327Z -url POST /task/addtask - Status: 200, Content Length: 0 bytes
+2023-10-07T07:36:30.407Z -url POST /task/addtask - Status: 200, Content Length: 0 bytes
+2023-10-07T07:38:13.613Z -url POST /task/addtask - Status: 200, Content Length: 0 bytes
+2023-10-07T07:38:57.484Z -url POST /task/addtask - Status: 200, Content Length: 0 bytes
+2023-10-07T07:39:16.114Z -url POST /task/addtask - Status: 200, Content Length: 0 bytes
+2023-10-07T07:46:40.783Z -url POST /task/addtask - Status: 200, Content Length: 0 bytes
+2023-10-07T07:59:45.568Z -url POST /task/addtask - Status: 200, Content Length: 0 bytes
