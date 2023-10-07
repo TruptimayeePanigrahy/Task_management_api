@@ -3,6 +3,8 @@ const taskroute = express.Router()
 const { taskmodel } = require("../Models/taskmodel")
 const { auth } = require("../Middleware/auth")
 
+
+//getall task
 taskroute.get("/gettask",async (req, res) => {
     try {
         let data = await taskmodel.find()
@@ -12,6 +14,19 @@ taskroute.get("/gettask",async (req, res) => {
     }
 })
 
+//getbyid
+taskroute.get("/:id",auth,async (req, res) => {
+    try {
+        const {id}=req.params
+        let data=await taskmodel.find({_id:id})
+        res.status(200).send({"msg":data})
+    } catch (error) {
+        res.status(400).send({"msg":error})
+    }
+})
+
+
+//add new task
 taskroute.post("/addtask",auth,async (req, res) => {
     try {
         const { title, description, status } = req.body;
@@ -24,6 +39,8 @@ taskroute.post("/addtask",auth,async (req, res) => {
     }
 })
 
+
+//update task
 taskroute.put("/updatetask/:id",auth,async (req, res) => {
     try {
         const { id } = req.params
@@ -35,6 +52,7 @@ taskroute.put("/updatetask/:id",auth,async (req, res) => {
     }
 })
 
+//delete task
 taskroute.delete("/deletetask/:id",auth,async (req, res) => {
     try {
         const { id } = req.params
