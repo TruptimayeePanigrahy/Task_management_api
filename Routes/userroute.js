@@ -3,15 +3,15 @@ const {usermodel}=require("../Models/usermodel")
 const userroute = express.Router()
 const jwt = require("jsonwebtoken")
 const bcrypt=require("bcrypt")
-
+//const createRequestLogger=require("../Middleware/logger")
 
 
 userroute.post("/register", async (req, res) => {
     try {
         const { username, email, password } = req.body
         const user = await usermodel.findOne({ email })
-        if (user) {
-            return req.status(200).send({"msg":"User already present plase login"})
+        if (!user) {
+            return req.status(200).send({"msg":"User already present please login"})
         }
         const haspass = bcrypt.hashSync(password, 7)
         let newuser = new usermodel({ username, email, password: haspass })

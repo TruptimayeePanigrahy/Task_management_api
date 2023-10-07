@@ -3,7 +3,7 @@ const taskroute = express.Router()
 const { taskmodel } = require("../Models/taskmodel")
 const { auth } = require("../Middleware/auth")
 
-taskroute.get("/task",async (req, res) => {
+taskroute.get("/gettask",async (req, res) => {
     try {
         let data = await taskmodel.find()
         res.status(200).send({"msg":data})
@@ -12,7 +12,7 @@ taskroute.get("/task",async (req, res) => {
     }
 })
 
-taskroute.post("/task",async (req, res) => {
+taskroute.post("/addtask",async (req, res) => {
     try {
         const { title, description, status } = req.body;
         const data = new taskmodel({ title, description, status })
@@ -24,7 +24,7 @@ taskroute.post("/task",async (req, res) => {
     }
 })
 
-taskroute.put("/task/:id",async (req, res) => {
+taskroute.put("/updatetask/:id",async (req, res) => {
     try {
         const { id } = req.params
         const data = req.body
@@ -35,7 +35,7 @@ taskroute.put("/task/:id",async (req, res) => {
     }
 })
 
-taskroute.delete("/task/:id",async (req, res) => {
+taskroute.delete("/deletetask/:id",async (req, res) => {
     try {
         const { id } = req.params
         await taskmodel.findByIdAndDelete({ _id: id })
