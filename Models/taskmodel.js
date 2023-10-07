@@ -22,4 +22,4 @@ const taskschema = mongoose.Schema({
 
 const taskmodel=mongoose.model("task",taskschema)
 
-module.exports={usermodel}
+module.exports={taskmodel}
