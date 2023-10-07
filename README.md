@@ -63,3 +63,4 @@ To use authentication, you must register and log in to manage tasks. Protected e
 Appropriate HTTP status codes and error messages will be returned in case of errors.
 ## Logging 
 API requests and responses can be logged in a log.txt file.
+<h1 align="center">✨Thank You✨</h1>
